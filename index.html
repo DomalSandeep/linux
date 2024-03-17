@@ -52,61 +52,435 @@
             padding: 5px 10px;
             cursor: pointer;
         }
-        #loop{
-    display: flex;
-    position: absolute;
-    top: -6%;
-    height: 25%;
-    width: 100%;
-    font-size: 20px;
-    white-space: nowrap;
-    font-family: poppins;
-}
-#loop>h1{
-    font-weight: 400;
-    animation-name:anim;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    color: red;
-}
-#loop>h1>span{
-    -webkit-text-stroke: 1.2px black;
-    color: transparent;
-    font-weight: 500;   
-}
-@keyframes anim{
-    0%{
-        transform:translateX(0%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
-}
+     
     </style>
 </head>
 <body>
     <div id="loop">
-        <h1><b>PLEASE NOTE* SOME COPY BUTTONS ARE NOT WORKING_ </b></h1>
-        <h1><b>PLEASE NOTE* SOME COPY BUTTONS ARE NOT WORKING_ </b></h1>
         <h1><b>PLEASE NOTE* SOME COPY BUTTONS ARE NOT WORKING </b></h1>
     </div>
 <div class="container">
     <h1>Linux Commands</h1>
 
     <div class="category">
-        <h2>Practical 1: File Management</h2>
+        <h2>Installation and Setup of VMware</h2>
         
         <div class="command">
-            <h3>Command 1: List Files in Directory</h3>
-            <pre id="command1">ls</pre>
-            <button class="copy-btn" onclick="copyCommand('command1')">Copy Command</button>
+            <h3>Step 1: Install VMware Workstation and Open Setup Wizard</h3>
+            <pre id="command1">
+    Install VMware Workstation. Then open the setup wizard.
+            </pre>
         </div>
         
-        <!-- Add more commands for Practical 1 -->
+        <div class="command">
+            <h3>Step 2: Accept End-User License Agreement</h3>
+            <pre id="command2">
+    After clicking on Next, read the End-User License Agreement and then click on the Accept checkbox. Then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 3: Change Installation Location</h3>
+            <pre id="command3">
+    Change the installation location as per your wish and then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 4: Install VMware Workstation</h3>
+            <pre id="command4">
+    Finally click on “Install”. The VMware Workstation is now being installed.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 5: Complete Installation</h3>
+            <pre id="command5">
+    Click on Finish.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 6: Open VMware Workstation</h3>
+            <pre id="command6">
+    Open VMware Workstation after the installation is complete and select “Use VMware Workstation for free for non-commercial use” and click on “Continue”.
+            </pre>
+        </div>
+    
+    </div>
+    
+    <div class="category">
+        <h2>Installation of RHEL</h2>
+        
+        <div class="command">
+            <h3>Step 1: Create a New Virtual Machine</h3>
+            <pre id="command7">
+    The VMware homepage is displayed after the installation and setup. Click on “Create a New Virtual Machine”.
+            </pre>
+        </div>
+        
+        <div class="command">
+            <h3>Step 2: Browse and Open ISO File</h3>
+            <pre id="command8">
+    Then browse for the ISO file in the directory and open it. Then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 3: Fill User Details</h3>
+            <pre id="command9">
+    Create a user and fill in the details of the user such as the username, password etc and then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 4: Enter Virtual Machine Name</h3>
+            <pre id="command10">
+    Enter the name of the virtual machine and then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 5: Specify Disk Capacity</h3>
+            <pre id="command11">
+    Specify the disk capacity (20.0 by default) and the partition configurations. Then click on Next.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 6: Verify Settings and Finish</h3>
+            <pre id="command12">
+    Verify all the settings before clicking on Finish.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 7: Log In to User</h3>
+            <pre id="command13">
+    Log in to the user and enter the login details and then click on Log In.
+            </pre>
+        </div>
+    
+    </div>
+    
+    <div class="category">
+        <h2>Basic Commands</h2>
+        
+        <div class="command">
+            <h3>Command 1: ls</h3>
+            <pre id="command14">
+    The ls command in Linux is a shell command that lists the contents of a directory.
+            </pre>
+        </div>
+        
+        <div class="command">
+            <h3>Command 2: vi (file_name)</h3>
+            <pre id="command15">
+    The vi command in Linux is a text editor that allows you to create and edit files in a terminal window.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 3: ls -l</h3>
+            <pre id="command16">
+    The ls -l command in Linux is a shell command that lists the contents of a directory in a long listing format.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 4: ls -i</h3>
+            <pre id="command17">
+    The ls -i command in Linux is a shell command that lists the contents of a directory and shows the inode number of each file and directory.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 5: ls -l n*</h3>
+            <pre id="command18">
+    The ls -l n* command in Linux is a shell command that lists the contents of the current directory that start with the letter n and shows detailed information about them in a long listing format.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 6: chmod 700 (file_name)</h3>
+            <pre id="command19">
+    The chmod 700 command in Linux is a shell command that sets the permissions of a file or directory to 700. This means that the owner of the file or directory has read, write, and execute permissions, and no one else has any permissions.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 7: chmod 600 (file_name)</h3>
+            <pre id="command20">
+    The chmod 600 command in Linux is a shell command that sets the permissions of a file or directory to 600. This means that the owner of the file or directory has read and write permissions, and no one else has any permissions.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 8: chmod 444 (file_name)</h3>
+            <pre id="command21">
+    The chmod 444 command in Linux is a shell command that sets the permissions of a file or directory to 444. This means that the owner, group, and others of the file or directory have only read permissions, and no one has to write or execute permissions.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 9: chmod 666 (file_name)</h3>
+            <pre id="command22">
+    The chmod 666 command in Linux is a shell command that sets the permissions of a file or directory to 666. This means that the owner, group, and others of the file or directory have read and write permissions, and no one has executed permissions.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 10: man ls</h3>
+            <pre id="command23">
+    The man ls command in Linux is a shell command that displays the manual page for the ls command.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 11: clear</h3>
+            <pre id="command24">
+    The clear command in Linux is a shell command that is used to clear the terminal screen.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 12: pwd</h3>
+            <pre id="command25">
+    The pwd command in Linux is used to print the full path of the current working directory.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 13: ls -R</h3>
+            <pre id="command26">
+    The ls -R command in Linux is used to list the contents of a directory and its subdirectories recursively. This means that it will display all the files and folders in the current directory, and then go into each subdirectory and show its contents, and so on.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 14: ls -d</h3>
+            <pre id="command27">
+    The ls -d command in Linux is used to list directories themselves, rather than their contents. This can be useful when you want to display only the directories from within your current directory, or when you want to show the full path of a specific directory.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 15: ls -RL</h3>
+            <pre id="command28">
+    The ls -RL command in Linux is used to list the contents of a directory and its subdirectories recursively, and to follow symbolic links to their targets. This means that it will display all the files and folders in the current directory, then go into each subdirectory and show its contents, and also show the files and folders that are linked by any symbolic links in the directory tree.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 16: whoami</h3>
+            <pre id="command29">
+    The whoami command in Linux is used to display the username of the current user who is logged in to the system.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 17: who</h3>
+            <pre id="command30">
+    The who command in Linux is used to display information about currently logged-in users on the system. It can also show other useful information, such as the time of the last system boot, the current run level, the active processes, and more.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 18: ps</h3>
+            <pre id="command31">
+    The ps command in Linux is used to view information about the processes running on your system.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 19: man man</h3>
+            <pre id="command32">
+    The man man command in Linux is used to display the manual page for the man command itself.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 20: cat (file_name_1) > file_name_2</h3>
+            <pre id="command33">
+    The cat (file_name_1) > (file_name_2) command in Linux is used for copying the contents of one file to another file. It concatenates the contents of file_name_1 and redirects the output to file_name_2.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 21: paste file_name_1 file_name_2</h3>
+            <pre id="command34">
+    The paste file_name_1 file_name_2 command in Linux is used for merging the corresponding lines of two files horizontally, separated by a tab character. It outputs the merged lines to the standard output.
+            </pre>
+        </div>
+    
+        <div class="command">
+            <h3>Command 22: cat file_name_1 >> file_name_2</h3>
+            <pre id="command35">
+    The cat file_name_1 >> file_name_2 command in Linux is used for appending the contents of one file to the end of another file. It concatenates the contents of file_name_1 and redirects the output to file_name_2. If file_name_2 does not exist, it will be created. If it already exists, it will be appended.
+            </pre>
+        </div>
+    </div>    
+
+    <div class="category">
+        <h2>Practical 2: Working with users, groups and permissions</h2>
+        
+        <div class="command">
+            <h3>Step 1: Login as root user</h3>
+            <pre id="command1">su - root</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 2: Add a new user</h3>
+            <pre id="command2">useradd newuser
+    passwd newuser</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 3: List directory contents</h3>
+            <pre id="command3">ls -l</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 4: Enter /etc/passwd file</h3>
+            <pre id="command4">vi /etc/passwd</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Working with Groups</h2>
+    
+        <div class="command">
+            <h3>Step 1: Create a new file</h3>
+            <pre id="command5">vi file1</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 2: Copy file to new user's directory</h3>
+            <pre id="command6">cp file1 /home/newuser</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 3: List directory contents</h3>
+            <pre id="command7">su - newuser
+    ls -l
+    ls</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 4: Change group of file</h3>
+            <pre id="command8">su - root
+    chgrp newuser file1</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Step 5: Change ownership of file</h3>
+            <pre id="command9">chown newuser file1</pre>
+        </div>
+    
+        <div class="command">
+            <h3>Changing group of multiple files</h3>
+            <pre id="command10">chgrp newuser f*</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Working with Permissions</h2>
+    
+        <div class="command">
+            <h3>Changing permissions of files</h3>
+            <pre id="command11">chmod 777 f*</pre>
+        </div>
 
     </div>
 
+    <div class="category">
+        <h2>Practical 3: File Management</h2>
+        
+        <div class="category">
+            <h2>Add a User</h2>
+            <div class="command">
+                <h3>Step 1: Add a User</h3>
+                <pre id="command1">sudo useradd zoro</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Network Settings - Change to Static IP Address</h2>
+            <div class="command">
+                <h3>Option 1: Using nmcli</h3>
+                <pre id="command2">sudo nmcli connection modify eth0 ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8</pre>
+            </div>
+            <div class="command">
+                <h3>Option 2: Using setup command</h3>
+                <pre id="command3"># setup
+        -> setup
+        -> network configuration
+        -> device configuration
+        -> eth0
+        -> Enter ip address
+        -> save and quit</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Disable IPv6 if not needed</h2>
+            <div class="command">
+                <h3>Edit sysctl.conf</h3>
+                <pre id="command4">sudo vi /etc/sysctl.conf</pre>
+            </div>
+            <div class="command">
+                <h3>Add lines</h3>
+                <pre id="command5">net.ipv6.conf.all.disable_ipv6 = 1
+        net.ipv6.conf.default.disable_ipv6 = 1</pre>
+            </div>
+            <div class="command">
+                <h3>Run sysctl</h3>
+                <pre id="command6">sudo sysctl -p</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Configure Services</h2>
+            <div class="command">
+                <h3>Start Apache HTTP Server</h3>
+                <pre id="command7">sudo service httpd start</pre>
+            </div>
+            <div class="command">
+                <h3>Stop Apache HTTP Server</h3>
+                <pre id="command8">sudo service httpd stop</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Display the List of Services that are Running</h2>
+            <div class="command">
+                <h3>List Services</h3>
+                <pre id="command9">chkconfig --list</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Stop and Turn OFF Auto-Start Setting for a Service</h2>
+            <div class="command">
+                <h3>Disable Apache HTTP Server auto-start</h3>
+                <pre id="command10">sudo chkconfig httpd off</pre>
+            </div>
+        </div>
+        
+        <div class="category">
+            <h2>Sudo Settings</h2>
+            <div class="command">
+                <h3>Edit sudoers file</h3>
+                <pre id="command11">sudo nano /etc/sudoers</pre>
+            </div>
+            <div class="command">
+                <h3>Add line</h3>
+                <pre id="command12">zoro ALL=(ALL:ALL) ALL</pre>
+            </div>
+        </div>
+
+    </div>
+    
     <div class="category">
         <h2>Practical 4: SSH Server: Password Authentication : Configure SSH Server to manage a server
             from the remote computer, SSH Client</h2>

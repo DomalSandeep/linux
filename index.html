@@ -597,17 +597,11 @@
             
             <div class="command">
                 <h3>Command: PermitRootLogin no</h3>
+                <h3>Command: DenyUsers user1</h3>
                 <pre id="command17">PermitRootLogin no</pre>
-                <button class="copy-btn" onclick="copyCommand('command17')">Copy Command</button>
-                <div class="explanation">Disables root login via SSH.</div>
+                <div class="explanation">add this lines at the ent of the file(the file will open automatically when you enter this command vi /etc/ssh/sshd_config) and save it using :wq</div>
             </div>
             
-            <div class="command">
-                <h3>Command: DenyUsers user1</h3>
-                <pre id="command18">DenyUsers user1</pre>
-                <button class="copy-btn" onclick="copyCommand('command18')">Copy Command</button>
-                <div class="explanation">Denies user1 from logging in via SSH.</div>
-            </div>
             
             <div class="command">
                 <h3>Command: service sshd restart</h3>
@@ -620,21 +614,21 @@
                 <h3>Command: ssh (username)@(ipaddress)</h3>
                 <pre id="command20">ssh (username)@(ipaddress)</pre>
                 <button class="copy-btn" onclick="copyCommand('command20')">Copy Command</button>
-                <div class="explanation">Connects to the specified IP address with the given username.</div>
+                <div class="explanation">Connects to the specified IP address with the given username.(Note* it will deny continue adding passwords 3 times)</div>
             </div>
             
             <div class="command">
                 <h3>Command: ssh root@ipaddress</h3>
                 <pre id="command21">ssh root@ipaddress</pre>
                 <button class="copy-btn" onclick="copyCommand('command21')">Copy Command</button>
-                <div class="explanation">Connects to the specified IP address as the root user.</div>
+                <div class="explanation">Connects to the specified IP address as the root user.(Note* it will deny continue adding passwords 3 times)</div>
             </div>
             
             <div class="command">
                 <h3>Command: ssh user2@ipaddress</h3>
                 <pre id="command22">ssh user2@ipaddress</pre>
                 <button class="copy-btn" onclick="copyCommand('command22')">Copy Command</button>
-                <div class="explanation">Connects to the specified IP address as user2.</div>
+                <div class="explanation">Connects to the specified IP address as user2.(It will allow user2)</div>
             </div>
             
             <div class="command">
@@ -648,21 +642,21 @@
                 <h3>Command: RSAAuthentication yes</h3>
                 <pre id="command24">RSAAuthentication yes</pre>
                 <button class="copy-btn" onclick="copyCommand('command24')">Copy Command</button>
-                <div class="explanation">Enables RSA authentication for SSH.</div>
+                <div class="explanation">Enables RSA authentication for SSH.(uncomment and save)</div>
             </div>
             
             <div class="command">
                 <h3>Command: PubkeyAuthentication yes</h3>
                 <pre id="command25">PubkeyAuthentication yes</pre>
                 <button class="copy-btn" onclick="copyCommand('command25')">Copy Command</button>
-                <div class="explanation">Enables public key authentication for SSH.</div>
+                <div class="explanation">Enables public key authentication for SSH.(uncomment and save)</div>
             </div>
             
             <div class="command">
                 <h3>Command: AuthorizedKeysFile .ssh/authorized_keys</h3>
                 <pre id="command26">AuthorizedKeysFile .ssh/authorized_keys</pre>
                 <button class="copy-btn" onclick="copyCommand('command26')">Copy Command</button>
-                <div class="explanation">Specifies the file containing authorized keys for SSH.</div>
+                <div class="explanation">Specifies the file containing authorized keys for SSH.(uncomment and save)</div>
             </div>
             
             <div class="command">
@@ -697,7 +691,7 @@
                 <h3>Command: ssh-keygen -t rsa</h3>
                 <pre id="command31">ssh-keygen -t rsa</pre>
                 <button class="copy-btn" onclick="copyCommand('command31')">Copy Command</button>
-                <div class="explanation">Generates RSA keys for SSH authentication.</div>
+                <div class="explanation">Generates RSA keys for SSH authentication.(Enter pass phrase like i like gym - three times )</div>
             </div>
             
             <div class="command">
@@ -848,7 +842,7 @@
         
         <div class="command">
             <h3>Step 7: Open configuration file and make following changes</h3>
-            <pre id="command7">vi /etc/vsftpd/vsftpd/conf</pre>
+            <pre id="command7">vi /etc/vsftpd/vsftpd.conf</pre>
             <button class="copy-btn" onclick="copyCommand('command7')">Copy Command</button>
             <div class="explanation">Edits the vsftpd configuration file.</div>
         </div>
@@ -1032,7 +1026,10 @@
         
         <div class="command">
             <h3>Step 10: Change subnet configuration and save the file</h3>
-            <pre id="command10">vi /etc/dhcp/dhcpd.conf</pre>
+            <pre id="command10">vi /etc/dhcp/dhcpd.conf
+                ifdown eth0
+                ifup eth0
+            </pre>
             <button class="copy-btn" onclick="copyCommand('command10')">Copy Command</button>
             <div class="explanation">Edits the subnet configuration in the dhcpd configuration file.</div>
         </div>
@@ -1344,6 +1341,133 @@
         </div>
 
     </div>
+    <div class="category">
+        <h2>Practical 02: Working with Users, Groups, and Permissions</h2>
+    </div>
+    
+    <div class="category">
+        <h2>Managing Users</h2>
+        <div class="command">
+            <h3>Add a User</h3>
+            <pre id="command1">sudo useradd groot</pre>
+        </div>
+        <div class="command">
+            <h3>Set a Password</h3>
+            <pre id="command2">sudo passwd groot</pre>
+        </div>
+        <div class="command">
+            <h3>Change User Details</h3>
+            <pre id="command3">sudo usermod -d /new/home/directory groot</pre>
+        </div>
+        <div class="command">
+            <h3>Delete a User</h3>
+            <pre id="command4">sudo userdel groot</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Managing Groups</h2>
+        <div class="command">
+            <h3>Add a Group</h3>
+            <pre id="command5">sudo groupadd group1</pre>
+        </div>
+        <div class="command">
+            <h3>Add a User to a Group</h3>
+            <pre id="command6">sudo usermod -aG group1 john</pre>
+        </div>
+        <div class="command">
+            <h3>Change Group Ownership</h3>
+            <pre id="command7">sudo chgrp group1 file_or_directory</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Practical 03: Initial System Settings</h2>
+    </div>
+    
+    <div class="category">
+        <h2>Add a User</h2>
+        <div class="command">
+            <h3>Step 1: Add a User</h3>
+            <pre id="command8">sudo useradd zoro</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Network Settings - Change to Static IP Address</h2>
+        <div class="command">
+            <h3>Option 1: Using nmcli</h3>
+            <pre id="command9">sudo nmcli connection modify eth0 ipv4.method manual ipv4.addresses 192.168.1.100/24 ipv4.gateway 192.168.1.1 ipv4.dns 8.8.8.8</pre>
+        </div>
+        <div class="command">
+            <h3>Option 2: Using setup command</h3>
+            <pre id="command10"># setup
+    -> setup
+    -> network configuration
+    -> device configuration
+    -> eth0
+    -> Enter ip address
+    -> save and quit</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Disable IPv6 if not needed</h2>
+        <div class="command">
+            <h3>Edit sysctl.conf</h3>
+            <pre id="command11">sudo vi /etc/sysctl.conf</pre>
+        </div>
+        <div class="command">
+            <h3>Add lines</h3>
+            <pre id="command12">net.ipv6.conf.all.disable_ipv6 = 1
+    net.ipv6.conf.default.disable_ipv6 = 1</pre>
+        </div>
+        <div class="command">
+            <h3>Run sysctl</h3>
+            <pre id="command13">sudo sysctl -p</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Configure Services</h2>
+        <div class="command">
+            <h3>Start Apache HTTP Server</h3>
+            <pre id="command14">sudo service httpd start</pre>
+        </div>
+        <div class="command">
+            <h3>Stop Apache HTTP Server</h3>
+            <pre id="command15">sudo service httpd stop</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Display the List of Services that are Running</h2>
+        <div class="command">
+            <h3>List Services</h3>
+            <pre id="command16">chkconfig --list</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Stop and Turn OFF Auto-Start Setting for a Service</h2>
+        <div class="command">
+            <h3>Disable Apache HTTP Server auto-start</h3>
+            <pre id="command17">sudo chkconfig httpd off</pre>
+        </div>
+    </div>
+    
+    <div class="category">
+        <h2>Sudo Settings</h2>
+        <div class="command">
+            <h3>Edit sudoers file</h3>
+            <pre id="command18">sudo nano /etc/sudoers</pre>
+        </div>
+        <div class="command">
+            <h3>Add line</h3>
+            <pre id="command19">zoro ALL=(ALL:ALL) ALL</pre>
+        </div>
+    </div>
+    
 
 </div>
 

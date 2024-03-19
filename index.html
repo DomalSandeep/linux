@@ -1206,20 +1206,28 @@
                 <div class="command">
                     <h3>Command 1: Reverse of a number</h3>
                     <pre id="command1">
-            echo "Accept number:"
-            read num
-            rev=0
-            rem=0
-            if [ $num -le 0 ]; then
-                echo "Invalid Number!"
-                exit
-            fi
-            while [ $num -ne 0 ]; do
-                rem=`expr $num % 10`
-                rev=`expr $rem + $rev \* 10`
-                num=`expr $num \/ 10`
-            done
-            echo "Reverse number is $rev"
+            echo "Enter a number:"
+read num 
+
+rev=0
+rem=0
+
+if [ $num -le 0 ]
+then 
+    echo "Invalid number" 
+    exit 
+fi
+
+while [ $num -ne 0 ]
+do 
+    rem=$((num % 10))
+    rev=$((rem + rev * 10))
+    num=$((num / 10))
+    echo "num = $num"
+    echo "rev = $rev"
+done 
+
+echo "Reverse number is $rev"
                     </pre>
                 </div>
             
